@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <img onclick="window.location.href='index.html'" src="images/LogoCodex.png" alt="">
+        <div class="navigation">
+        </div>
+    </nav>
+
+    <section id="contact">
+        <div class="form" id="pago">
+            <form method="post" action="" class="pagos-form" method="post">
+                <h4 class="tit">INFORMAR UN PAGO</h4>
+                <div class="form-row">
+                    <input id="name_1" type="text" name="Nombre" placeholder="Nombre" required>
+                    <input id="name_2" type="text" name="Apellido" placeholder="Apellido" required>
+                </div>
+                <div class="form-col">
+                    <div class="select-wrapper">
+                        <select id="metodoPago" name="Pago" class="form-input" required>
+                            <option value="" disabled selected hidden>Metodo de pago</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="efectivo">Efectivo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="select-wrapper">
+                        <select id="curso" name="Curso" class="form-input" required>
+                            <option value="" disabled selected hidden>Curso</option>
+                            <option value="python1">Python 1</option>
+                            <option value="python2">Python 2</option>
+                            <option value="desarrolloWeb">Desarrollo Web</option>
+                            <option value="disenoWeb">Diseño Web</option>
+                            <option value="mecanicaAutomotor">Mecanica Automotor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="select-wrapper">
+                        <select id="mes" name="Mes" class="form-input" required>
+                            <option value="" disabled selected hidden>Mes</option>
+                            <option value="enero">Enero</option>
+                            <option value="febrero">Febrero</option>
+                            <option value="marzo">Marzo</option>
+                            <option value="abril">Abril</option>
+                            <option value="mayo">Mayo</option>
+                            <option value="junio">Junio</option>
+                            <option value="julio">Julio</option>
+                            <option value="agosto">Agosto</option>
+                            <option value="septiembre">Septiembre</option>
+                            <option value="octubre">Octubre</option>
+                            <option value="noviembre">Noviembre</option>
+                            <option value="diciembre">Diciembre</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-coll">
+                    <button id="enviar" type="submit" value="Submit">Informar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        document.getElementById("pago").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var nombre = document.getElementById("name_1").value;
+            var apellido = document.getElementById("name_2").value;
+    
+            var selectElement = document.getElementById("metodoPago");
+            var selectedOption = selectElement.value; // Obtener el valor del elemento seleccionado, en lugar del texto
+    
+            var selectElement1 = document.getElementById("curso");
+            var selectedOption1 = selectElement1.options[selectElement1.selectedIndex].text;
+    
+            var selectElement2 = document.getElementById("mes");
+            var selectedOption2 = selectElement2.options[selectElement2.selectedIndex].text;
+    
+            // Verificar si algún campo está vacío
+            if (nombre === "" || apellido === "" || selectedOption === "" || selectedOption1 === "" || selectedOption2 === "") {
+                // Mostrar mensaje de error con SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Por favor complete todos los campos',
+                });
+                return false; // Evita el envío del formulario
+            }
+    
+            var formData = new FormData();
+            formData.append('entry.1474293252', nombre);
+            formData.append('entry.1981407260', apellido);
+            formData.append('entry.793677973', selectedOption);
+            formData.append('entry.2003128898', selectedOption1);
+            formData.append('entry.987233512', selectedOption2);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd4DnGNPZ5rjG6LzpntJMnKOnTnlBgYZnESw1lYg9fIlMSp5g/formResponse");
+            xhr.send(formData);
+    
+            // Función para redirigir a WhatsApp
+            var mensajeExito = '';
+            if (selectedOption === "transferencia") {
+                mensajeExito = "Hola, quería informar mi pago correspondiente al mes de " + selectedOption2 + ", efectuado mediante transferencia, adjuntando comprobante de la misma: \n\nNombre y apellido de alumno/a: " + nombre + " " + apellido;
+            } else if (selectedOption === "efectivo") {
+                mensajeExito = "Hola, quería informar mi pago correspondiente al mes de " + selectedOption2 + ", efectuado en efectivo. \n\nNombre y apellido de alumno/a: " + nombre + " " + apellido;
+            }
+    
+            Swal.fire({
+                icon: 'success',
+                title: 'Informe Exitoso',
+                text: 'Debes ponerte en contacto mediante WhatsApp para terminar de informar el mismo',
+                showCancelButton: false,
+                confirmButtonText: 'WhatsApp',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var mensajeWhatsApp = encodeURIComponent(mensajeExito);
+                    var numeroTelefono = '543515131746'; // Agrega aquí tu número de teléfono de WhatsApp
+                    var urlWhatsApp = 'https://api.whatsapp.com/send?phone=' + numeroTelefono + '&text=' + mensajeWhatsApp;
+                    window.location.href = urlWhatsApp;
+                }
+            });
+        })
+    </script>
+    
+</body>
+
+</html>
+    

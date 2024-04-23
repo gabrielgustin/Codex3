@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <nav>
+        <img onclick="window.location.href='index.html'" src="images/LogoCodex.png" alt="">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="course.html">Cursos</a></li>
+                <li><a href="about.html" class="active">Sobre Codex</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="https://bit.ly/3SV5qwV" target="_blank">WhatsApp</a></li>
+            </ul>
+            <i id="menu-btn" class="fas fa-bars fa-2x" style="color: white; margin-bottom: 10px;"></i>
+        </div>
+    </nav>
+
+    <section id="about-home">
+        <h2>¿Quiénes Somos?</h2>
+    </section>
+
+    <section id="about-container">
+        <div class="about-img">
+            <img src="images/a.png" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>¡Bienvenido a Codex!</h2>
+            <p>Somos una empresa que enfoca su crecimiento
+                y expansión dentro de entidades educativas,
+                brindando cursos extracurriculares
+                de manera presencial como extensión académica.</p>
+
+            <div class="about-fe">
+                <img src="images/fe1.png" alt="">
+                <div class="fe-text">
+                    <h5>40+ Horas</h5>
+                    <p>¡Disponemos de más de 40 horas en cada uno de nuestros cursos para capacitarte como profesional!
+                    </p>
+                </div>
+            </div>
+            <div class="about-fe">
+                <img src="images/fe2.png" alt="">
+                <div class="fe-text">
+                    <h5>Acceso de por vida</h5>
+                    <p>¡Dispondrás por tiempo ilimitado todo el contenido teórico y práctico!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="course" style="padding-bottom: 6vw; padding-top: 2vw;">
+        <h1 style="font-size: 2,5em; margin-bottom: 20px;">Nuestros Pilares</h1>
+        <div class="course-box">
+            <div class="courses" style="width: 350px;">
+                <i class="fas fa-book" style="font-size: 6em; color: #070B2D; margin-right: 10px;"></i>
+                <!-- Icono para Conocimiento -->
+                <div class="details">
+                    <h6 style="font-size: 1.5em; color: #ce9d0c ;"> Conocimiento </h6>
+                    <span style="font-size: 1.1em;">Nuestra plataforma te ofrece la oportunidad de explorar y
+                        dominar diversas disciplinas.<br> ¡El aprendizaje integral te espera para que puedas alcanzar
+                        tus
+                        metas con confianza y éxito!</span>
+                </div>
+            </div>
+            <div class="courses" style="width: 350px;">
+                <i class="fas fa-lightbulb" style="font-size: 6em; color: #070B2D; margin-right: 10px;"></i>
+                <!-- Icono para Creatividad -->
+                <div class="details">
+                    <h6 style="font-size: 1.5em; color: #ce9d0c ;">Creatividad</h6>
+                    <span style="font-size: 1.1em;">¡Es tu oportunidad de explorar nuevos
+                        horizontes y destacarte como un innovador en el mundo digital junto a la comunidad de
+                        Codex!</span>
+                </div>
+            </div>
+            <div class="courses" style="width: 350px;">
+                <i class="fas fa-users" style="font-size: 6em; color: #070B2D; margin-right: 10px;"></i>
+                <div class="details">
+                    <h6 style="font-size: 1.5em; color: #ce9d0c ;">Trabajo en equipo</h6>
+                    <span style="font-size: 1.1em;">¡Descubre el potencial de trabajar en equipo!<br>Sumérgete en una
+                        experiencia donde
+                        compartirás con tus compañeros el emocionante proceso de materializar todas tus ideas.
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <h1 style="font-size: 2,5em; margin-bottom: 20px; text-align: center;">Nuestros Servicios</h1>
+    <section id="blog-container">
+        <div class="blogs">
+            <div class="post">
+                <i class="fas fa-file-alt" style="font-size: 8em; color: #070B2D; margin-right: 10px;"></i>
+                <!-- Icono para Web Development -->
+                <h3>Curricula</h3>
+                <div class="btn">
+                    <a id="info-link" class="blue" href="">Información</a>
+                </div>
+            </div>
+            <div class="post highlighted">
+                <div class="post">
+                    <i class="fas fa-clock" style="font-size: 8em; color: #070B2D; margin-right: 10px;"></i>
+                    <!-- Icono para Web Design -->
+                    <h3>Contraturno</h3>
+                    <div class="btn">
+                        <a id="infoo-link" class="blue" href="">Información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <i class="fas fa-users" style="font-size: 8em; color: #070B2D; margin-right: 10px;"></i>
+                <!-- Icono para App Development -->
+                <h3>Capacitaciones</h3>
+                <div class="btn">
+                    <a id="infooo-link" class="blue" href="">Información</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cate">
+            <h2>Categorías</h2>
+            <hr>
+            <a>
+                <p>Incorpora la programación en tu currícula</p>
+            </a>
+            <hr>
+            <a >
+                <p>Incorpora cursos extracurriculares</p>
+            </a>
+            <hr>
+            <a >
+                <p>Capacita tu comunidad</p>
+            </a>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="footer-col">
+            <h3>Buscar</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Cursos</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Suscribirse</h3>
+            <p>¡Recibirás correos con novedades!</p>
+            <form id="miFormulario"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScK7ERhvRTqDRTySU1lrpmOwKM3TN-M1y0uDJ-4TXrFuawoqg/formResponse"
+                method="Post">
+                <input type="email" name="entry.2136656804" value="" placeholder="Dirección de correo">
+                <button class="yellow" style="border: 0;" id="enviar" type="submit">Go</button>
+            </form>
+        </div>
+        <div class="copyright">
+            <div class="pro-link">
+                <a href="https://www.instagram.com/codexlearning/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/codexlearning/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        $("#menu-btn").click(function () {
+            $("nav .navigation ul").addClass("active");
+        });
+        $("#menu-close").click(function () {
+            $("nav .navigation ul").removeClass("active");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var infoLink = document.getElementById("info-link");
+            infoLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+                // Mostrar el cuadro de diálogo personalizado con SweetAlert2
+                Swal.fire({
+                    title: 'Curricula',
+                    html: 'En Codex, ofrecemos un servicio completo de curricula escolar, que incluye contenido teórico y práctico para una educación de calidad. Capacitamos al cuerpo docente para garantizar una enseñanza efectiva y preparar a los estudiantes para futuros desafíos.',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'WhatsApp'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        redirectToWhatsApp();
+                    }
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var infoLink = document.getElementById("infoo-link");
+            infoLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+                // Mostrar el cuadro de diálogo personalizado con SweetAlert2
+                Swal.fire({
+                    title: 'Contraturno',
+                    html: 'Potencia tu oferta educativa con nuestros cursos extracurriculares! Diseñados específicamente para instituciones educativas, nuestro servicio te permite promover actividades extracurriculares de alta calidad. Nosotros nos encargamos de la difusión de los cursos, mientras que tú proporcionas el espacio necesario para llevar a cabo las clases.',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'WhatsApp'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        redirectToWhatsApp();
+                    }
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var infoLink = document.getElementById("infooo-link");
+            infoLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+
+                // Mostrar el cuadro de diálogo personalizado con SweetAlert2
+                Swal.fire({
+                    title: 'Capacitaciones',
+                    html: 'Ofrecemos capacitaciones personalizadas para tu comunidad. Nuestros programas están diseñados para satisfacer las necesidades específicas de tu grupo, brindando una experiencia de aprendizaje única y adaptada a cada individuo. ¡Potencia el desarrollo de tu comunidad con nuestras capacitaciones a medida!',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'WhatsApp'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        redirectToWhatsApp();
+                    }
+                });
+            });
+        });
+
+        function redirectToWhatsApp() {
+            // Redireccionar a WhatsApp
+            window.location.href = "https://api.whatsapp.com/send?phone=3515131746&text=Hola,%20me%20estoy%20contactando%20de%20la%20institución:";
+        }
+
+    </script>
+
+</body>
+
+</html>
